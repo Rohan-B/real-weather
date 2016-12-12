@@ -7,6 +7,6 @@ myApp.controller('WeatherController', function($scope, $http) {
 	  .then(function(response){ 
 			console.log("get here");
 			console.log(response);
-			//$scope.currWeather = response.forecast.txt_forecast; 
+			$scope.currWeather = response.data.forecast.txt_forecast.forecastday[0].fcttext; 
 		});
 });
