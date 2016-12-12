@@ -5,9 +5,10 @@ myApp.controller('WeatherController', function($scope, $http) {
 	$scope.test = "willthiswork";
 
 	$http.jsonp("http://api.wunderground.com/api/d2c25648f13d77b5/forecast/q/CA/San_Francisco.json")
-	  .then(function(response){ 
+	  .success(function(response){ 
 			console.log("get here");
 			console.log(response);
 			$scope.currWeather = response.data.forecast.txt_forecast.forecastday[0].fcttext; 
+			console.log(currWeather);
 		});
 });
