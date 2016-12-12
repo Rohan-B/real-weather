@@ -1,8 +1,20 @@
 <!doctype html>
 <html>
-<body>
+<head>
+	
+	//import angular lib as well as the app 
+	<script src="assets/angular.min.js"></script>
+	<script src="app.js"></script>
+</head> 
 
-<h1>"Hi"</h1>
+
+<body ng-controller="WeatherController">
+
+<h1>Current weather for San Francisco:</h1>
+<h1>{{currWeather}}<h1>
+
+
+
 
 </body>
 
