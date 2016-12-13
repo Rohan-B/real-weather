@@ -20,7 +20,7 @@ myApp.controller('WeatherController', function($scope, $http) {
 
 			currAverage = (currHigh + currLow)/2;
 			console.log(currAverage);
-			
+			console.log((currHigh + currLow)/2);
 			$http.get("http://api.wunderground.com/api/d2c25648f13d77b5/yesterday/q/CA/San_Francisco.json")
 			.then(function(response){ 
 				console.log(response);
