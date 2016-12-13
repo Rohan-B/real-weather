@@ -12,7 +12,10 @@
 
 <h1>Real Weather for San Francisco:</h1>
 <h1>{{currWeather}}<h1>
-<h1>That's a change of {{weatherdiff}} degrees from yesterday</h1>
+<h1 ng-if="weatherdiff > 0">That's {{weatherdiff}} degrees warmer from yesterday</h1>
+<h1 ng-if="weatherdiff < 0">That's {{weatherdiff}} degrees colder from yesterday</h1>
+<h1 ng-if="weatherdiff == 0">That's the same temperature as yesterday</h1>
+
 
 
 

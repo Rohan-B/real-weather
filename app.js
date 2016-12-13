@@ -30,7 +30,9 @@ myApp.controller('WeatherController', function($scope, $http) {
 				console.log(data);
 			});
 		})
-
+		.catch(function(data) {
+			console.log(data);
+		});
 
 
 
