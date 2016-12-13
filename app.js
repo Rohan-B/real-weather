@@ -6,7 +6,6 @@ myApp.controller('WeatherController', function($scope, $http) {
 
 	$http.get("http://api.wunderground.com/api/d2c25648f13d77b5/forecast/q/CA/San_Francisco.json")
 	  .then(function(response){ 
-			console.log(response);
 			//provide a summary of the current weather 
 			$scope.currWeather = response.data.forecast.txt_forecast.forecastday[0].fcttext; 
 			
@@ -15,6 +14,8 @@ myApp.controller('WeatherController', function($scope, $http) {
 			currLow = response.data.forecast.simpleforecastforecastday[0].low.fahrenheit;
 			//get the current weather average 
 			currAverage = (currHigh + currLow)/2;
+			console.log("hi");
+			
 			$http.get("http://api.wunderground.com/api/d2c25648f13d77b5/yesterday/q/CA/San_Francisco.json")
 			.then(function(response){ 
 				console.log(response);
