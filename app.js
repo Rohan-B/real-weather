@@ -15,23 +15,22 @@ myApp.controller('WeatherController', function($scope, $http) {
 			currLow = response.data.forecast.simpleforecastforecastday[0].low.fahrenheit;
 			//get the current weather average 
 			currAverage = (currHigh + currLow)/2;
+			$http.get("http://api.wunderground.com/api/d2c25648f13d77b5/yesterday/q/CA/San_Francisco.json")
+			.then(function(response){ 
+				console.log(response);
+				//get yesterdays average weather 
+				yestAverage = response.data.history.dailysummary[0].meantempi;
+				//get the difference in weather between yesterday and today
+				$scope.weatherdiff = currAverage - yestAverage;
+			})
+			.catch(function(data){
+				console.log(data);
+			});
 		})
 		.catch(function(data){
 			console.log(data);
 		});
 
-	$http.get("http://api.wunderground.com/api/d2c25648f13d77b5/yesterday/q/CA/San_Francisco.json")
-	  .then(function(response){ 
-			console.log(response);
-			//get yesterdays average weather 
-			yestAverage = response.data.history.dailysummary[0].meantempi;
-		})
-		.catch(function(data){
-			console.log(data);
-		});
-
-	//get the difference in weather between yesterday and today
-	$scope.weatherdiff = currAverage - yestAverage;
 
 
 
