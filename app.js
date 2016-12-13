@@ -28,8 +28,6 @@ myApp.controller('WeatherController', function($scope, $http) {
 				console.log(data);
 			});
 		})
-		});
-
 
 
 
