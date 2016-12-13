@@ -29,7 +29,7 @@ myApp.controller('WeatherController', function($scope, $http) {
 			});
 		})
 		.catch(function(data){
-			console.log(data);
+			console.log("yesterday error");
 		});
 
 
