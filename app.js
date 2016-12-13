@@ -22,14 +22,12 @@ myApp.controller('WeatherController', function($scope, $http) {
 				yestAverage = response.data.history.dailysummary[0].meantempi;
 				//get the difference in weather between yesterday and today
 				$scope.weatherdiff = currAverage - yestAverage;
-				console.log($scope.weatherdiff);
+				console.log("here");
 			})
 			.catch(function(data){
 				console.log(data);
 			});
 		})
-		.catch(function(data){
-			console.log("yesterday error");
 		});
 
 
