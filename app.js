@@ -9,6 +9,7 @@ myApp.controller('WeatherController', function($scope, $http) {
 			//provide a summary of the current weather 
 			$scope.currWeather = response.data.forecast.txt_forecast.forecastday[0].fcttext; 
 			
+			console.log("not failing yet");
 			//get the current high and the low for the weather 
 			currHigh = response.data.forecast.simpleforecastforecastday[0].high.fahrenheit;
 			currLow = response.data.forecast.simpleforecastforecastday[0].low.fahrenheit;
