@@ -8,19 +8,16 @@ myApp.controller('WeatherController', function($scope, $http) {
 	  .then(function(response){ 
 			//provide a summary of the current weather 
 			$scope.currWeather = response.data.forecast.txt_forecast.forecastday[0].fcttext; 
-			
-			console.log("not failing yet");
+			console.log(response.data);	
 			//get the current high and the low for the weather 
 			currHigh = response.data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
 			currLow = response.data.forecast.simpleforecast.forecastday[0].low.fahrenheit;
 			//get the current weather average 
 			
-			console.log(currHigh);
-			console.log(currLow);
-
-			currAverage = (currHigh + currLow)/2;
-			console.log(currAverage);
+			currAverage = currHigh + currLow;
+			console.log(currAverage /2);
 			console.log((currHigh + currLow)/2);
+			
 			$http.get("http://api.wunderground.com/api/d2c25648f13d77b5/yesterday/q/CA/San_Francisco.json")
 			.then(function(response){ 
 				console.log(response);
