@@ -1,6 +1,8 @@
 var myApp = angular.module('weather', []);
 
 myApp.controller('WeatherController', function($scope, $http) {
+	
+	var currAverage, yestAverage;
 
 	$http.get("http://api.wunderground.com/api/d2c25648f13d77b5/forecast/q/CA/San_Francisco.json")
 	  .then(function(response){ 
@@ -12,7 +14,7 @@ myApp.controller('WeatherController', function($scope, $http) {
 			currHigh = response.data.forecast.simpleforecastforecastday[0].high.fahrenheit;
 			currLow = response.data.forecast.simpleforecastforecastday[0].low.fahrenheit;
 			//get the current weather average 
-			var currAverage = (currHigh + currLow)/2;
+			currAverage = (currHigh + currLow)/2;
 		})
 		.catch(function(data){
 			console.log(data);
@@ -22,7 +24,7 @@ myApp.controller('WeatherController', function($scope, $http) {
 	  .then(function(response){ 
 			console.log(response);
 			//get yesterdays average weather 
-			var yestAverage = response.data.history.dailysummary[0].meantempi;
+			yestAverage = response.data.history.dailysummary[0].meantempi;
 		})
 		.catch(function(data){
 			console.log(data);
