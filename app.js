@@ -12,7 +12,7 @@ myApp.controller('WeatherController', function($scope, $http) {
 			currHigh = response.data.forecast.simpleforecastforecastday[0].high.fahrenheit;
 			currLow = response.data.forecast.simpleforecastforecastday[0].low.fahrenheit;
 			//get the current weather average 
-			var currAverage = ($scope.currHigh + $scope.currLow)/2;
+			var currAverage = (currHigh + currLow)/2;
 		})
 		.catch(function(data){
 			console.log(data);
