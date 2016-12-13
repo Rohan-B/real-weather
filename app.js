@@ -4,7 +4,7 @@ myApp.controller('WeatherController', function($scope, $http) {
 	$scope.currWeather = "hi";
 	$scope.test = "willthiswork";
 
-	$http.jsonp("http://api.wunderground.com/api/d2c25648f13d77b5/forecast/q/CA/San_Francisco.json")
+	$http.jsonp("http://api.wunderground.com/api/d2c25648f13d77b5/forecast/q/CA/San_Francisco.json&callback=JSON_CALLBACK")
 	  .success(function(response){ 
 			console.log("get here");
 			console.log(response);
